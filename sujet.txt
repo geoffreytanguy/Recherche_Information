@@ -1,0 +1,55 @@
+LE RENDU 5/11:
+email avec dans le sujet: [ARI-3A] VosNoms
++rapport .tex
++code en archive
+
+Partie1:
+
+1)Supprimer les caracteres non alpha numeriques, les urls, les emails
+
+2)Tranformer les lettres majuscules en minuscules (dans le dico aussi)
+
+3)Utiliser le dictionnaire pour traduire les mots En-Fr
+=> Ne pas traduire un mot si une traduction du mot est le mm mot en francais
+=> Prendre la premiere traduction sinon
+*On peut utiliser une table de hashage, avec en clef le mot anglais et en valeur la trad
+
+4)Filtrer les mots dans la stoplist
+
+5)Ordonner les mots dans l'ordre decroissant de leur apparition dans la collection en gardant leur frequences
+Plotter la frequence en fonction du rang
+
+6)Enlever les accents
+
+7)Constituer le dictionnaire
+
+8)Calculer le document Frequency df = # de docs qui contiennent le mot
+
+9)Indexation directe des docs suivant les codages:
+-Tf
+(index_du_mot_dans_dico:#apparition i:n i+5:42)  avec i index et n nombre d'apparition
+
+-Tf-idf
+avec idf = ln(N/df), N le # de docs dans la collection
+
+
+Partie2:
+Clustering de docs
+hypothese1: Les docs sont codés sur la base de ma freq des mots du dico dans ces derniers.
+
+hyp2: Les mots du dico presents sont independants les uns des autres.
+
+hyp3: Chaque doc appartient à un et un seul groupe parmi K clusters.
+
+voir photos
+voir cours, partie algo CEM
+
+1) Pour differentes valeurs de K ={10, 15, 20 ,25, 30}
+a) Trouver les clusters de docs
+b) Regarder le contenu des clusters (les 5 mots les plus frequents)
+
+2) Trouvez les clusters de mots en transposant la matrice de representation documents-termes
+(chaque observation est un terme decrit par un vecteur ordinal) en appliquant l'algo avec K=100
+
+3) Representez les documents dans l'espace induit par les clusters de mots
+Puis repartir a l'etape 4
